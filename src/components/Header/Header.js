@@ -1,13 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import './Header.css';
 
 const Header = () => {
+    const { user } = useFirebase()
     return (
         <div className='nav'>
             <NavLink to='/'>home</NavLink>
             <NavLink to='/register'>Regester</NavLink>
-            <NavLink to='/login'>login</NavLink>
+            {
+                user.uid ? <button>log out</button> :
+                <NavLink to='/login'>login</NavLink>}
         </div>
     );
 };
