@@ -4,14 +4,15 @@ import useFirebase from '../../hooks/useFirebase';
 import './Header.css';
 
 const Header = () => {
-    const { user } = useFirebase();
+    const { user,handleSignOut } = useFirebase();
     console.log(user)
     return (
         <div className='nav'>
             <NavLink to='/'>home</NavLink>
             <NavLink to='/register'>Regester</NavLink>
+            <span>{user?.displayName && user.displayName}</span>
             {
-                user?.uid ? <button>log out</button> :
+                user?.uid ? <button onClick={handleSignOut}>log out</button> :
                 <NavLink to='/login'>login</NavLink>}
         </div>
     );
