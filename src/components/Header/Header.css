@@ -13,3 +13,7 @@
   text-transform: uppercase;
   font-weight: 700;
 }
+
+.nav a:hover {
+  color: goldenrod;
+}
