@@ -11,6 +11,8 @@ const Header = () => {
         <div className='nav'>
             <NavLink to='/'>home</NavLink>
             <NavLink to='/register'>Regester</NavLink>
+            <NavLink to='/dashboard'>dashboard</NavLink>
+            <NavLink to='/orders'>orders</NavLink>
             <span>{user?.displayName && user.displayName}</span>
             {
                 user?.uid ? <button onClick={ () => signOut(auth)}>log out</button> :
